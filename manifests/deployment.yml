@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: msjpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: msjpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: msjpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: msjpipelinesjavascriptdocker 
+          image: jms03810acr.azurecr.io/msjpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
